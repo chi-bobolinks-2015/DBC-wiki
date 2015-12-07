@@ -1,4 +1,6 @@
 language: ruby
+rvm:
+  - 2.2.1
 sudo: false
 script: 'ci/travis.rb'
 before_install:
