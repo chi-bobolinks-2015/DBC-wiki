@@ -3,10 +3,10 @@ class CreateEdits < ActiveRecord::Migration
     create_table :edits do |t|
       t.integer :article_id
       t.integer :author_id
-      t.boolean :queued
+      t.boolean :approved
       t.string :content
       t.string :title
-      t.integer :approved_by_id
+      t.integer :approver_id
 
       t.timestamps null: false
     end
