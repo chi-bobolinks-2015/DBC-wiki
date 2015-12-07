@@ -11,16 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 20151207203336) do
-=======
-ActiveRecord::Schema.define(version: 0) do
->>>>>>> 2ae63eff801b8f92a596fae462a6ad60c78a6bad
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "articles", force: :cascade do |t|
     t.integer  "category_id"
     t.integer  "user_id"
@@ -54,6 +50,4 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at",      null: false
   end
 
-=======
->>>>>>> 2ae63eff801b8f92a596fae462a6ad60c78a6bad
 end
