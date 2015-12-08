@@ -1,0 +1,17 @@
+<h1>Signup for DBC Wiki!</h1>
+
+<%if @errors%>
+  <%@errors.each do |error|%>
+    <%=error%><br>
+  <%end%>
+<%end%>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  Userame: <%= f.text_field :username %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+
+<% end %>
