@@ -8,4 +8,5 @@ class Edit < ActiveRecord::Base
   validates :approved, inclusion: { in: [true, false] }
   validates :content, presence: true, length: { minimum: 5 }
   validates :title, presence: true
+  validates :approver_id, presence: true
 end
