@@ -5,6 +5,7 @@ class Edit < ActiveRecord::Base
 
   validates :article_id, presence: true
   validates :author_id, presence: true
-  validates :content, presence: true
+  validates :approved, inclusion: { in: [true, false] }
+  validates :content, presence: true, length: { minimum: 5 }
   validates :title, presence: true
 end

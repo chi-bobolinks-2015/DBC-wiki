@@ -10,7 +10,6 @@ FactoryGirl.define do
 
       after(:create) do |article, evaluator|
         create_list(:edit, evaluator.edit_count, article: article)
-      
       end
     end
   end
@@ -33,7 +32,6 @@ FactoryGirl.define do
 
       after(:create) do |category, evaluator|
         create_list(:article, evaluator.article_count, category: category)
-      
       end
     end
   end
@@ -53,7 +51,6 @@ FactoryGirl.define do
 
       after(:create) do |user, evaluator|
         create_list(:edit, evaluator.edit_count, user: user)
-      
       end
     end
   end
