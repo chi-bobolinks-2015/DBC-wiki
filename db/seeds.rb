@@ -11,7 +11,7 @@
     :username => Faker::Name.name,
     :email => Faker::Internet.email,
     :admin => true,
-    :password_digest => Faker::Internet.password
+    :password => Faker::Internet.password
     )
 end
 
@@ -20,7 +20,7 @@ end
     :username => Faker::Name.name,
     :email => Faker::Internet.email,
     :admin => false,
-    :password_digest => Faker::Internet.password
+    :password => Faker::Internet.password
     )
 end
 
