@@ -1,10 +1,4 @@
 <h1>Featured</h1>
 
-<tr>
-	<% @categories.each do |category| %>
-		<td><%= category.name %></td>
-	<% end %>
-</tr>
-
 <p><%= @featured_article.first.title %></p>
 <p><%= @featured_article.first.content %></p>
