@@ -6,22 +6,37 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="bg-gray">
+  <body class="bg-pat">
+    <div id="container" class="">
 
-  <header class="h-3em w-100p bg-wh row">
-      <div class="col-1 spacer"></div>
-        <div class="col-9 h-100p tx-cn w-100p p-rl">
+      <header class="w-100p bg-wh row">
+        <div class="col-2 spacer"></div>
+          <div class="col-2 tx-cn w-100p p-rl">
+            <img class="ds-ib mg-tp-sm" src="<%= image_url("devbootcamp-logo.png") %>">
+          </div>
 
-            <img class="ds-ib v-cen" src="<%= image_url("devbootcamp-logo.png") %>">
+          <div class="col-4 spacer"></div>
 
+          <div id="search input container" class="col-2 pd-m"><center>
+            <input type="textbox" class="ds-ib pd-lt-xs br-gy br-sm bg-sr cr-rd-s" placeholder="Search"></center>
+          </div>
+        <div class="col-2 spacer"></div>
+      </header>
 
-            <input type="textbox" class="ds-ib pd-lt-xs br-gy br-sm bg-sr cr-rd-s" placeholder="Search">
+      <main class="pd-bo-ft clear mn-ht clearfix">
+        <div id="sidebar" class="col-3 bg-gray ht-au">...</div>
+        <div class="w-100p pd-lt-25 ht-au d-ib tx-lt h-100p">
+
+          <%= yield %>
 
         </div>
-      <div class="col-2 spacer"></div>
-  </header>
 
-    <%= yield %>
+      </main>
+              <footer class="bg-gray w-100p fl-l clear">
+
+
+      </footer>
+      </div>
 
   </body>
 </html>
