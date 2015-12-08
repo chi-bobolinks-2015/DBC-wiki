@@ -53,4 +53,35 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "PATCH '/users/:id'" do
+
+    it "routes to users#update" do 
+      assert_routing({ method: 'patch', path: '/users' }, { controller: "users", action: "update" })
+    end
+
+    describe "on valid update" do
+        let(:user) {User.create(email: "test@test.com", username: "bobolink123", password: "test")}
+      before :each do 
+        post :update, {id: user.id, user: {email: "new@newmail.com", username: "xXxBOBOLINKxXx", password: "fleetwoodmac4eva"}}
+      end
+      
+      it "updates email" do 
+        expect(user.email).to eq("new@newmail.com")
+      end
+      
+      it "updates username" do 
+        expect(user.username).to eq("xXxBOBOLINKxXx")
+      end
+      
+      it "updates password" do 
+        expect(user.authenticate("fleetwoodmac4eva")).to eq(true)
+      end
+      
+      it "redirects user to the root_url" do
+        expect(response).to redirect_to(root_url)
+      end 
+    end
+  end
+
+
 end
