@@ -1,4 +1,9 @@
-# FactoryGirl.define do
+# FactoryGirl.define do  factory :comment do
+#     content "MyString"
+# article_id 1
+# commenter_id 1
+#   end
+
 
 #   factory :article do
 #     category
