@@ -1,0 +1,13 @@
+<h1>Login for DBC Wiki!</h1>
+
+<%if @errors%>
+  <%= @errors %><br>
+<%end%>
+
+<%= form_for :session, url: '/sessions' do |f| %>
+
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit "Submit" %>
+
+<% end %>
