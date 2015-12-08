@@ -2,13 +2,39 @@
 <html>
 <head>
   <title>DBCwiki</title>
+  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+  <body class="bg-pat ft-go">
+    <div id="container" class="">
 
-<%= yield %>
+      <header class="w-100p bg-wh row">
+        <div class="col-2 spacer"></div>
+          <div class="col-2 tx-cn w-100p p-rl">
+            <img class="ds-ib mg-tp-sm" src="<%= image_url("devbootcamp-logo.png") %>">
+          </div>
 
-</body>
+          <div class="col-4 spacer"></div>
+
+          <div id="search input container" class="col-2 pd-m"><center>
+            <input type="textbox" class="ds-ib pd-lt-xs br-gy br-sm bg-sr cr-rd-s" placeholder="Search"></center>
+          </div>
+        <div class="col-2 spacer"></div>
+      </header>
+
+
+
+            <%= yield %>
+
+          </div>
+        </main>
+        <footer class="bg-foot w-100p fl-l clear">
+
+
+        </footer>
+      </div>
+
+  </body>
 </html>

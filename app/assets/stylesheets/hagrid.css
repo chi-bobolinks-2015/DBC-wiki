@@ -4,15 +4,17 @@
 /* Mobile first! */
 [class*="col-"] { width: 100%; }
 [class*="col-"] { float: left; }
+
 .row:after {
     content: "";
     clear: both;
     display: block;
 }
-.spacer { min-height: 1px; }
+
 
 /* Desktop, 12 cell grid */
 @media only screen and (min-width: 500px) {
+    .spacer { min-height: 1px; }
     .col-1  {width: 8.33%;}
     .col-2  {width: 16.66%;}
     .col-3  {width: 25%;}
@@ -25,4 +27,9 @@
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+    .w-mx-s { max-width: 200px; }
+    .pd-main  { padding-left:  26%;
+            padding-right:  3%;
+            padding-top:    1%;
+            padding-bottom: 1%; }
 }

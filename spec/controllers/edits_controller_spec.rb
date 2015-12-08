@@ -1,5 +1,5 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe EditsController, type: :controller do
+# RSpec.describe EditsController, type: :controller do
 
-end
+# end
