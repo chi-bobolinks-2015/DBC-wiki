@@ -7,8 +7,13 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  get '/profile', to: "users#show", as: 'user'
+  get '/admin/profile', to: "users#show", as: "admin"
+
   get '/edits' => 'edits#index'
-  
+  get '/index' => 'index#index'
+  # get '/index/next' => 'index#next'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
