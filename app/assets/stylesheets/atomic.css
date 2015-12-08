@@ -23,6 +23,11 @@ h1 {
   font-size: 2em;
 }
 
+.content-box {
+  background: white;
+  padding:      .8em;
+}
+
 .clearfix { overflow: auto;}
 .ht-au { height: auto;}
 

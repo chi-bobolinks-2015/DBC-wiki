@@ -1,7 +1,5 @@
 $(function() {
 
-
-
   if ($(window).width() > 500) {
     containerHeight = $("#container").height();
     containerHeight -= 100;
