@@ -1,0 +1,15 @@
+<div id="<%= @featured.id %>" class="feature-id-grabber"></div>
+
+<h1><%= @featured.title %></h1>
+
+<div class="mg-lt-md ft-lh-sm ft-sm">
+<%= @featured.content %>
+</div>
+
+<br>
+<div class="w-100p">
+<% if !@first %><div class="fl-l"><a class="" href="" id="prev-feature"><< Previous Feature</a></div>
+<% end %>
+<% if !@last %>
+<div class="fl-r"><a class="" href="" id="next-feature">Next Feature >></a></div>
+<% end %>

@@ -5,18 +5,9 @@
 <div class="w-100p pd-main ht-au d-ib tx-lt h-100p">
 
 <div class="content-box clearfix">
-<span class="mg-lt-md">Featured Article of the day:</span>
-
+<span class="mg-lt-md">Featured Article:</span>
 <div id="feature-box">
-<h1><%= @featured.title %></h1>
-
-<div class="mg-lt-md ft-lh-sm ft-sm">
-<%= @featured.content %>
+<%= render "index/feature" %>
 </div>
-</div>
-
-<br>
-<div class="w-100p tx-ar"><a class="" href="" id="next-feature">Next Feature >></a></div>
-
 </div>
 
