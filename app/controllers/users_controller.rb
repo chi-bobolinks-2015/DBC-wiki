@@ -1,10 +1,13 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
+  
   def new
+    @user = User.new
+    render 'user/new'
   end
 
   def create
-  	user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
+  	@user = User.new(user_params)
+    if @user.save && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to '/'
     else
