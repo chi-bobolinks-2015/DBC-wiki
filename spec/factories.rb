@@ -16,8 +16,8 @@ FactoryGirl.define do
 
   factory :edit do
     article
-    author
-    approver
+    # author
+    # approver
     title "Arrays"
     content "Arrays are awesome"
   end
@@ -36,23 +36,23 @@ FactoryGirl.define do
     end
   end
 
-  sequence :email do |n|
-    "person#{n}@example.com"
-  end
+  # sequence :email do |n|
+  #   "person#{n}@example.com"
+  # end
 
-  factory :user, aliases: [:approver, :author] do
-    username    "john"
-    email
+  # factory :user, aliases: [:approver, :author] do
+  #   username    "john"
+  #   email
 
-    factory :users_with_edits do
-      transient do
-        edits_count 5
-      end
+  #   factory :users_with_edits do
+  #     transient do
+  #       edits_count 5
+  #     end
 
-      after(:create) do |user, evaluator|
-        create_list(:edit, evaluator.edit_count, user: user)
-      end
-    end
-  end
+  #     after(:create) do |user, evaluator|
+  #       create_list(:edit, evaluator.edit_count, user: user)
+  #     end
+  #   end
+  # end
 
 end
