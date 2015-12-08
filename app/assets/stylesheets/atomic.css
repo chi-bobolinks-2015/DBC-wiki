@@ -63,6 +63,22 @@ h3 {
   font-family: 'Nunito', sans-serif;
 }
 
+#sidebar {
+  color: white;
+  padding: .5em;
+  font-family: 'Nunito', sans-serif;
+
+}
+
+#sidebar > a {
+  color: white;
+  text-decoration: none;
+}
+
+#sidebar > a:hover {
+  text-decoration: underline;
+}
+
 .clearfix { overflow: auto;}
 .ht-au { height: auto;}
 

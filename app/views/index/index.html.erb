@@ -1,12 +1,22 @@
+<main class="pd-bo-ft clear mn-ht clearfix">
+<div id="sidebar" class="col-3 w-mx-s d-ib bg-gray ht-au">
+
+...</div>
+<div class="w-100p pd-main ht-au d-ib tx-lt h-100p">
 
 <div class="content-box clearfix">
 <span class="mg-lt-md">Featured Article of the day:</span>
-<h1><%= @featured[0].title %></h1>
+
+<div id="feature-box">
+<h1><%= @featured.title %></h1>
 
 <div class="mg-lt-md ft-lh-sm ft-sm">
-<%= @featured[0].content %>
+<%= @featured.content %>
+</div>
 </div>
 
+<br>
 <div class="w-100p tx-ar"><a class="" href="" id="next-feature">Next Feature >></a></div>
 
 </div>
+
