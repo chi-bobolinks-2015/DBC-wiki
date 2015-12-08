@@ -22,6 +22,14 @@
 .pd-no    { padding:       0px; }
 .pd-lt-xs { padding-left: .6em; }
 .pd-sm    { padding:      .4em; }
+.pd-m     { padding:      .7em; }
+
+
+/*###### MARGIN ###########
+#########################*/
+
+.mg-tp-sm  { margin-top: .7em; }
+
 
 
 /*###### BACKGROUND #######
