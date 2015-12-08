@@ -2,11 +2,12 @@
 <html>
 <head>
   <title>DBCwiki</title>
+  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-  <body class="bg-pat">
+  <body class="bg-pat ft-go">
     <div id="container" class="">
 
       <header class="w-100p bg-wh row">
@@ -23,19 +24,18 @@
         <div class="col-2 spacer"></div>
       </header>
 
-      <main class="pd-bo-ft clear mn-ht clearfix">
-        <div id="sidebar" class="col-3 bg-gray ht-au">...</div>
-        <div class="w-100p pd-lt-25 ht-au d-ib tx-lt h-100p">
+        <main class="pd-bo-ft clear mn-ht clearfix">
+          <div id="sidebar" class="col-3 w-mx-s d-ib bg-gray ht-au">...</div>
+          <div class="w-100p pd-main ht-au d-ib tx-lt h-100p">
 
-          <%= yield %>
+            <%= yield %>
 
-        </div>
+          </div>
+        </main>
+        <footer class="bg-foot w-100p fl-l clear">
 
-      </main>
-              <footer class="bg-gray w-100p fl-l clear">
 
-
-      </footer>
+        </footer>
       </div>
 
   </body>

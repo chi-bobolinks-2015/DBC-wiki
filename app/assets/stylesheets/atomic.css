@@ -17,6 +17,12 @@ footer {
   left: 0;
 }
 
+h1 {
+  color: gray;
+  margin-top: .2em;
+  font-size: 2em;
+}
+
 .clearfix { overflow: auto;}
 .ht-au { height: auto;}
 
@@ -28,6 +34,7 @@ footer {
 .w-100p { width: 100%; }
 .w-5p   { width:  5px; }
 .w-25p  { width:  25%; }
+.w-mx-md { max-width: 500px; }
 
 
 
@@ -46,7 +53,7 @@ footer {
 .pd-lt-xs { padding-left: .6em; }
 .pd-sm    { padding:      .4em; }
 .pd-m     { padding:      .7em; }
-.pd-lt-25 { padding-left:  25%;   }
+
 .pd-bo-ft { padding-bottom: 5em;}
 
 
@@ -62,7 +69,7 @@ footer {
 
 .bg-wh       { background:   white; }
 .bg-gray     { background: #828c91; }
-
+.bg-foot     { background: #394647; }
 
 
 
@@ -122,3 +129,7 @@ footer {
 
 .fl-l { float: left;}
 .clear { clear: both;}
+
+
+
+.ft-go { font-family: 'Nunito', sans-serif; }
