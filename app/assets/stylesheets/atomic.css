@@ -1,0 +1,39 @@
+.debug { border: 1px solid red; }
+
+
+/*###### WIDTH ############
+#########################*/
+
+.w-100p { width: 100%; }
+
+
+/*###### HEIGHT ###########
+#########################*/
+
+.h-100p { height: 100%; }
+.h-3em  { height:  3em; }
+
+
+/*###### BACKGROUND ######
+#########################*/
+
+.bg-wh       { background: white; }
+.bg-gray     { background:  gray; }
+
+
+/*###### POSITIONING #####
+#########################*/
+
+/* Vertical centering requires the parent element have relative positioning */
+.v-cen  { position: absolute;
+          top:           50%;
+          transform: translateY(-50%); }
+
+.p-rl   { position:   relative; }
+
+
+/*###### DISPLAY ##########
+#########################*/
+
+.ds-ib { display: inline-block; }
+
