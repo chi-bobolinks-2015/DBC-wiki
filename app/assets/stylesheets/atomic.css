@@ -5,6 +5,7 @@
 #########################*/
 
 .w-100p { width: 100%; }
+.w-5p   { width:  5px; }
 
 
 /*###### HEIGHT ###########
@@ -12,28 +13,65 @@
 
 .h-100p { height: 100%; }
 .h-3em  { height:  3em; }
+.h-22   { height: 22px; }
 
 
-/*###### BACKGROUND ######
+/*###### PADDING ##########
+#########################*/
+
+.pd-no    { padding:       0px; }
+.pd-lt-xs { padding-left: .6em; }
+.pd-sm    { padding:      .4em; }
+
+
+/*###### BACKGROUND #######
 #########################*/
 
 .bg-wh       { background: white; }
 .bg-gray     { background:  gray; }
 
 
-/*###### POSITIONING #####
+
+/*###### POSITIONING ######
 #########################*/
 
 /* Vertical centering requires the parent element have relative positioning */
-.v-cen  { position: absolute;
-          top:           50%;
+.v-cen  { position:  relative;
+          top:            50%;
           transform: translateY(-50%); }
 
+.v-cen-s { margin-top: auto;
+           margin-bottom: auto; }
+
+.v-md   { vertical-align: middle; }
+.v-bo   { vertical-align: bottom; }
+
+.h-cen  { margin-right:    auto;
+          margin-left:     auto; }
+
 .p-rl   { position:   relative; }
+
+.p-lt   { align: left; }
+
+.tx-cn  { text-align:   center; }
+
 
 
 /*###### DISPLAY ##########
 #########################*/
 
 .ds-ib { display: inline-block; }
+.ds-tc { display: table-cell; }
 
+
+/*###### BORDER ###########
+#########################*/
+
+.br-tp-no { border-top-style: none; }
+.br-gy   { border-color:  gray; }
+
+.br-sm   { border-width:   2px; }
+
+.cr-rd-s { border-radius: 15px; }
+
+.ul-no   { list-style-type:    none; }

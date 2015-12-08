@@ -8,16 +8,17 @@
 </head>
 <body class="bg-gray">
 
-  <header class="h-3em w-100p bg-wh">
-    <div class="row">
-      <div class="col-2 spacer"></div>
-        <div class="col-8 debug h-3em w-100p p-rl">
+  <header class="h-3em w-100p bg-wh row">
+      <div class="col-1 spacer"></div>
+        <div class="col-9 h-100p tx-cn w-100p p-rl">
 
-        <img class="v-cen ds-ib" src="<%= image_url("devbootcamp-logo.png") %>">
+            <img class="ds-ib v-cen" src="<%= image_url("devbootcamp-logo.png") %>">
+
+
+            <input type="textbox" class="ds-ib pd-lt-xs br-gy br-sm bg-sr cr-rd-s" placeholder="Search">
 
         </div>
       <div class="col-2 spacer"></div>
-    </div>
   </header>
 
     <%= yield %>
