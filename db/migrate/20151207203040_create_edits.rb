@@ -5,7 +5,7 @@ class CreateEdits < ActiveRecord::Migration
       t.integer :author_id, null: false
       t.boolean :approved
       t.string :content, null: false
-      t.string :title, null: false
+      t.string :title, null: false, unique: true
       t.integer :approver_id
 
       t.timestamps null: false
