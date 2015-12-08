@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+ include ApplicationHelper
   def new
 
     render 'user/new'
@@ -13,6 +13,14 @@ class UsersController < ApplicationController
     else
       @errors = @user.errors.full_messages
       render 'user/new'
+    end
+  end
+
+  def show
+    if is_admin?
+      render '/admin/show'
+    else
+      render "/user/show"
     end
   end
 
