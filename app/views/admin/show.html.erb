@@ -18,11 +18,22 @@
 <!-- don't touch the code between these comments -->
 
 
-<h1>Hello, current_user.username</h1>
+<h1>Hello, <%= @user.username %></h1>
 
+<h2>Edit Queue</h2>
+<% @articles.with_unapproved_edits.each do |article| %>
+  <ul class=".ul-no">
+    <% article.edits.unapproved_edits.each do |edit| %>
+      <li>Proposed Title: <%= edit.title %></li>
+      <li>Proposed Content: <%= edit.content %></li>
+    <% end %>
+  </ul>
+<% end %>
 
+<h2>Users</h2>
 <% @users.each do |user| %>
-  <p>user.username</p>
+  <p><%= user.username %></p>
+  <p><%= user.username %></p>
 <% end %>
 
 
