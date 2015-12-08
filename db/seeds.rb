@@ -42,9 +42,9 @@ end
         :author_id => rand(1..50),
         :approved => [true, true, true, false].sample,
         :title => use_this_title,
-        :content => Faker::Hipster.paragraph(2) + article_content,
+        :content => Faker::Hipster.paragraph(2) + article_content + "\n" + (Faker::Hipster.paragraphs(rand(4..7))).join("\n")
         )
-      if edit.approved == true do
+      if edit.approved == true
         edit.approver_id = rand(1..5)
       end
     end
