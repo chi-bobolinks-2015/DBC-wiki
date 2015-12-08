@@ -2,7 +2,7 @@ class EditsController < ApplicationController
 
 	def index
 		@featured_article = Edit.where(featured: true)
-		render 'feature'
+		render 'index'
 	end
 
 	def new
