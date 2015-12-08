@@ -1,17 +1,24 @@
-<h1>Signup for DBC Wiki!</h1>
+<center>
+<section class="login-box">
+
+
+<h2>Haven't been here before?</h2>
+<h3>Create a user profile below</h3>
 
 <%if @errors%>
   <%@errors.each do |error|%>
     <%=error%><br>
   <%end%>
 <%end%>
-
+<p>
 <%= form_for :user, url: '/users' do |f| %>
 
-  Userame: <%= f.text_field :username %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.text_field :username, :placeholder => " username" %><br>
+  <%= f.text_field :email, :placeholder => " email" %> <br>
+  <%= f.password_field :password, :placeholder => " password" %> <br>
+  <%= f.password_field :password_confirmation, :placeholder => " password confirmation" %> <br>
   <%= f.submit "Submit" %>
-
 <% end %>
+</p>
+</section>
+</center>

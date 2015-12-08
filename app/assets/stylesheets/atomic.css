@@ -17,6 +17,68 @@ footer {
   left: 0;
 }
 
+.content-box {
+  background: white;
+  padding:      .8em;
+  border: 1px gray solid;
+  font-family: sans-serif;
+}
+
+.login-box {
+  background: white;
+  padding:      .8em;
+  border: 1px gray solid;
+  font-family: sans-serif;
+  max-width: 400px;
+}
+
+a {
+  color: #19abb5;
+  text-decoration: none;
+
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+h1 {
+  color: gray;
+  margin-top: .2em;
+  font-size: 1.8em;
+  font-family: 'Nunito', sans-serif;
+}
+
+h2 {
+  color: gray;
+  margin: .2em;
+  font-size: 1.6em;
+  font-family: 'Nunito', sans-serif;
+}
+
+h3 {
+  color: gray;
+  margin: .2em;
+  font-size: 1.2em;
+  font-family: 'Nunito', sans-serif;
+}
+
+#sidebar {
+  color: white;
+  padding: .5em;
+  font-family: 'Nunito', sans-serif;
+
+}
+
+#sidebar > a {
+  color: white;
+  text-decoration: none;
+}
+
+#sidebar > a:hover {
+  text-decoration: underline;
+}
+
 .clearfix { overflow: auto;}
 .ht-au { height: auto;}
 
@@ -28,6 +90,7 @@ footer {
 .w-100p { width: 100%; }
 .w-5p   { width:  5px; }
 .w-25p  { width:  25%; }
+.w-mx-md { max-width: 500px; }
 
 
 
@@ -46,7 +109,7 @@ footer {
 .pd-lt-xs { padding-left: .6em; }
 .pd-sm    { padding:      .4em; }
 .pd-m     { padding:      .7em; }
-.pd-lt-25 { padding-left:  25%;   }
+
 .pd-bo-ft { padding-bottom: 5em;}
 
 
@@ -54,6 +117,7 @@ footer {
 #########################*/
 
 .mg-tp-sm    { margin-top:   .7em; }
+.mg-lt-md     { margin-left:   1em; }
 
 
 
@@ -62,7 +126,7 @@ footer {
 
 .bg-wh       { background:   white; }
 .bg-gray     { background: #828c91; }
-
+.bg-foot     { background: #394647; }
 
 
 
@@ -122,3 +186,13 @@ footer {
 
 .fl-l { float: left;}
 .clear { clear: both;}
+
+
+
+/*###### FONT #############
+#########################*/
+
+.ft-go { font-family: 'Nunito', sans-serif; }
+.ft-sm { font-size: .9em; }
+.ft-lh-sm { line-height: 135%; }
+.tx-ar { text-align: right; }

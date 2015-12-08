@@ -11,16 +11,23 @@
     :username => Faker::Name.name,
     :email => Faker::Internet.email,
     :admin => true,
-    :password_digest => Faker::Internet.password
+    :password => Faker::Internet.password
     )
 end
+
+User.create(
+  :username => "Henry",
+  :email => "sidgwick@gmail.com",
+  :admin => true,
+  :password => "1Z2X3C4V5t"
+  )
 
 45.times do
   User.create(
     :username => Faker::Name.name,
     :email => Faker::Internet.email,
     :admin => false,
-    :password_digest => Faker::Internet.password
+    :password => Faker::Internet.password
     )
 end
 
