@@ -7,6 +7,7 @@ class EditsController < ApplicationController
 
 	def new
 		@edit = Edit.new
+		render 'new'
 	end
 
 # 	def edit
@@ -35,10 +36,10 @@ class EditsController < ApplicationController
 #   		end
 # 	end
 
-	def show
-    	@edit = Edit.where(approved: true)
-    	render 'show'
-  end
+	# def show
+ #    	@edit = Edit.where(approved: true)
+ #    	render 'show'
+ #    end
 
 #   def destroy
 #   	@edit = Edit.find(params[:id])
