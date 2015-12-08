@@ -17,15 +17,18 @@ footer {
   left: 0;
 }
 
-h1 {
-  color: gray;
-  margin-top: .2em;
-  font-size: 2em;
-}
-
 .content-box {
   background: white;
   padding:      .8em;
+  border: 1px gray solid;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: gray;
+  margin-top: .2em;
+  font-size: 1.8em;
+  font-family: 'Nunito', sans-serif;
 }
 
 .clearfix { overflow: auto;}
@@ -66,6 +69,7 @@ h1 {
 #########################*/
 
 .mg-tp-sm    { margin-top:   .7em; }
+.mg-lt-md     { margin-left:   1em; }
 
 
 
