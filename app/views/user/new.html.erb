@@ -1,15 +1,16 @@
 <center>
-<section class="bg-wh w-100p w-mx-md pd-sm mg-no">
+<section class="login-box">
 
 
-<h1>Signup for DBC Wiki!</h1>
+<h2>Haven't been here before?</h2>
+<h3>Create a user profile below</h3>
 
 <%if @errors%>
   <%@errors.each do |error|%>
     <%=error%><br>
   <%end%>
 <%end%>
-
+<p>
 <%= form_for :user, url: '/users' do |f| %>
 
   <%= f.text_field :username, :placeholder => " username" %><br>
@@ -18,6 +19,6 @@
   <%= f.password_field :password_confirmation, :placeholder => " password confirmation" %> <br>
   <%= f.submit "Submit" %>
 <% end %>
-
+</p>
 </section>
 </center>

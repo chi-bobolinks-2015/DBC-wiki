@@ -1,10 +1,12 @@
 
-<div class="content-box">
+<div class="content-box clearfix">
+<span class="mg-lt-md">Featured Article of the day:</span>
+<h1><%= @featured[0].title %></h1>
 
-<h1><%= @featured.title %></h1>
-
-<div class="mg-lt-md">
-<%= @featured.content %>
+<div class="mg-lt-md ft-lh-sm ft-sm">
+<%= @featured[0].content %>
 </div>
+
+<div class="w-100p tx-ar"><a class="" href="" id="next-feature">Next Feature >></a></div>
 
 </div>

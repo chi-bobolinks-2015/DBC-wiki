@@ -24,10 +24,42 @@ footer {
   font-family: sans-serif;
 }
 
+.login-box {
+  background: white;
+  padding:      .8em;
+  border: 1px gray solid;
+  font-family: sans-serif;
+  max-width: 400px;
+}
+
+a {
+  color: #19abb5;
+  text-decoration: none;
+
+}
+
+a:hover {
+  font-weight: bold;
+}
+
 h1 {
   color: gray;
   margin-top: .2em;
   font-size: 1.8em;
+  font-family: 'Nunito', sans-serif;
+}
+
+h2 {
+  color: gray;
+  margin: .2em;
+  font-size: 1.6em;
+  font-family: 'Nunito', sans-serif;
+}
+
+h3 {
+  color: gray;
+  margin: .2em;
+  font-size: 1.2em;
   font-family: 'Nunito', sans-serif;
 }
 
@@ -141,4 +173,10 @@ h1 {
 
 
 
+/*###### FONT #############
+#########################*/
+
 .ft-go { font-family: 'Nunito', sans-serif; }
+.ft-sm { font-size: .9em; }
+.ft-lh-sm { line-height: 135%; }
+.tx-ar { text-align: right; }
