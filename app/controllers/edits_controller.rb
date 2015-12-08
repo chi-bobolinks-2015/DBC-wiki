@@ -10,7 +10,7 @@ class EditsController < ApplicationController
 	end
 
 # 	def edit
-#   		@edit = Edit.find(params[:id])
+# 		@edit = Edit.find(params[:id])
 # 	end
 
 	def create
@@ -35,9 +35,10 @@ class EditsController < ApplicationController
 #   		end
 # 	end
 
-# 	def show
-#     	@edit = Edit.find(params[:id])
-#   	end
+	def show
+    	@edit = Edit.where(approved: true)
+    	render 'show'
+  end
 
 #   def destroy
 #   	@edit = Edit.find(params[:id])
