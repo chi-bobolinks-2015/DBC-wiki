@@ -6,4 +6,47 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+5.times do
+  User.create(
+    :username => Faker::Name.name,
+    :email => Faker::Internet.email,
+    :admin => true,
+    :password_digest => Faker::Internet.password
+    )
+end
 
+45.times do
+  User.create(
+    :username => Faker::Name.name,
+    :email => Faker::Internet.email,
+    :admin => false,
+    :password_digest => Faker::Internet.password
+    )
+end
+
+25.times do
+  category = Category.create(
+    :name => Faker::Hacker.noun
+    )
+
+  rand(10..25).times do
+    article = category.articles.create(
+      :user_id => rand(1..50)
+      )
+
+    use_this_title = Faker::Hipster.sentence(3, false, 3)
+    article_content = Faker::Hipster.paragraph(2, false, 2)
+
+    rand(5..15).times do
+      edit = article.edits.create(
+        :author_id => rand(1..50),
+        :approved => [true, true, true, false].sample,
+        :title => use_this_title,
+        :content => Faker::Hipster.paragraph(2) + article_content,
+        )
+      if edit.approved == true do
+        edit.approver_id = rand(1..5)
+      end
+    end
+  end
+end
