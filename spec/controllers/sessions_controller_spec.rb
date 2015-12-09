@@ -59,9 +59,9 @@ RSpec.describe SessionsController, type: :controller do
         expect(response).to render_template(:new)
       end
 
-      xit "renders errors" do
-        #this could be a test
-      end
+      # xit "renders errors" do
+      #   #this could be a test
+      # end
 
     end
 
@@ -79,7 +79,6 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     it "removes the session user id" do
-      p session[:user_id]
       expect(session[:user_id]).to eq(nil)
     end
 
