@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/edits/new' => 'edits#new'
   get '/users/:id/edit' => 'users#edit'
   put '/users/:id' => 'users#update'
-
+  delete '/users/:id' => 'users#destroy', as: 'destroy_user'
   # get '/edits/new' => 'edits#new'
 
   resources :categories do
