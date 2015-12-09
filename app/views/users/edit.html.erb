@@ -1,0 +1,21 @@
+<center>
+<section class="login-box">
+
+<h3>Edit your profile</h3>
+
+<%if @errors%>
+  <%@errors.each do |error|%>
+    <%=error%><br>
+  <%end%>
+<%end%>
+<p>
+<%= form_for :user, url: "/users/#{current_user.id}" do |f| %>
+  <input name="_method" type="hidden" value="put">
+  <%= f.text_field :username, :placeholder => " username" %><br>
+  <%= f.text_field :email, :placeholder => " email" %> <br>
+  <%= f.password_field :password, :placeholder => " password" %> <br>
+  <%= f.submit "Submit" %>
+<% end %>
+</p>
+</section>
+</center>
