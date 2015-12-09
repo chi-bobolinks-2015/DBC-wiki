@@ -2,12 +2,17 @@ $(function() {
 
   function reSidebar(){
     if ($(window).width() > 500) {
-      var footerHeight = $("footer").height() + 1;
+      $("#sidebar").css("height", 0);
+      var footerHeight = $("footer").height();
       var containerHeight = $("#container").height();
-      containerHeight -= footerHeight;
-      $("#sidebar").css("min-height", containerHeight);
+      var totalHeight = containerHeight - (footerHeight*2);
+      $("#sidebar").css({
+        "height": totalHeight + "px"
+      });
     } else {
-      $("#sidebar").css("min-height", "4em");
+      $("#sidebar").css({
+        "height": "4em"
+      });
     }
   }
 
