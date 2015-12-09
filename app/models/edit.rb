@@ -12,11 +12,13 @@ class Edit < ActiveRecord::Base
   validates :featured, inclusion: { in: [true, false] }
 
   def first_feature?
-    self == Edit.where(:featured => true).first
+    self == Edit.where(:featured => true)[0]
   end
 
   def last_feature?
-    self == Edit.where(:featured => true).last
+    featured_articles = Edit.where(:featured => true)
+    featured_index = featured_articles.length - 1
+    self == Edit.where(:featured => true)[featured_index]
   end
 
   def feature_args(direction)
@@ -27,10 +29,10 @@ class Edit < ActiveRecord::Base
     else
       index_adjuster = -1
     end
-    featured = queried_features[(feature_index + index_adjuster)]
-    first = featured.first_feature?
-    last = featured.last_feature?
-    return { :featured => featured, :first => first, :last => last }
+    new_featured = queried_features[(feature_index + index_adjuster)]
+    first = new_featured.first_feature?
+    last = new_featured.last_feature?
+    return { :featured => new_featured, :first => first, :last => last }
   end
 
   def self.unapproved_edits
