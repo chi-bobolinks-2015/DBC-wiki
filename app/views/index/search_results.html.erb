@@ -1,0 +1,79 @@
+<main class="pd-bo-ft clear mn-ht clearfix">
+<div id="sidebar" class="col-3 w-mx-s d-ib bg-gray ht-au">
+<!-- don't touch the code above here! -->
+
+
+
+
+<!--
+   this is where the sidebar info goes
+                                      -->
+
+
+
+
+<!-- don't touch the code between these comments -->
+</div>
+<div class="w-100p pd-main ht-au d-ib tx-lt h-100p">
+<!-- don't touch the code between these comments -->
+
+
+  <section class="content-box mg-lt-md">
+    <h2>Users whose names match '<%= @term %>'</h2>
+    <br>
+    <% if @user_username_match.length > 0 %>
+      <% @user_username_match.each do |user| %>
+      <%= user.username %>
+      <% end %>
+    <% else %>
+      Sorry, no users met that search criteria.
+    <% end %>
+  </section>
+
+  <section class="content-box mg-lt-md">
+    <h2>Categories that match '<%= @term %>'</h2>
+    <br>
+    <% if @category_name_match.length > 0 %>
+      <% @category_name_match.each do |category| %>
+      <%= category.username %>
+      <% end %>
+    <% else %>
+      Sorry, no categories met that search criteria.
+    <% end %>
+  </section>
+
+  <section class="content-box mg-lt-md">
+    <h2>Articles whose titles match '<%= @term %>'</h2>
+    <br>
+    <% if @article_title_match.length > 0 %>
+      <% @article_title_match.each do |article| %>
+      <%= article.title %><br>
+      <% end %>
+    <% else %>
+      Sorry, no articles met that search criteria.
+    <% end %>
+  </section>
+
+  <section class="content-box mg-lt-md">
+    <h2>Categories that match '<%= @term %>'</h2>
+    <br>
+    <% if @article_content_match.length > 0 %>
+      <% @article_content_match.each do |article| %>
+      <%= article.title %><br>
+      <% end %>
+    <% else %>
+      Sorry, no articles met that search criteria.
+    <% end %>
+  </section>
+
+<!--
+  this is where the content goes.
+
+  <h1>, <h2>, <h3>, and <a> are styled.
+  anything you want in a white box (to be readable) needs to be inside <section class="content-box mg-lt-md"></section>
+
+-->
+
+
+
+<!-- don't worry about those divs not closing, it's in the layout -->

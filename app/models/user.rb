@@ -24,4 +24,7 @@ class User < ActiveRecord::Base
   #   end
   # end
 
+  extend Search
+
+
 end

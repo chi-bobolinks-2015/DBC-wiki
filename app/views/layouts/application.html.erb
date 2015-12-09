@@ -21,12 +21,16 @@
             <a href="/"><img class="ds-ib mg-tp-sm" src="<%= image_url("devbootcamp-logo.png") %>"></a>
           </div>
 
-          <div class="col-4 spacer"></div>
+          <div class="col-3 spacer"></div>
 
-          <div id="search input container" class="col-2 pd-m"><center>
-            <input type="textbox" class="ds-ib pd-lt-xs br-gy br-sm bg-sr cr-rd-s" placeholder="Search"></center>
+          <div id="search input container" class="col-5 pd-m"><center>
+          <form action="/search">
+            <input id="search-bar" name="search" type="textbox" class="ds-ib pd-lt-xs br-gy br-sm bg-sr cr-rd-s" placeholder="Search">
+            <input type="submit" class="d-ib">
+            </center>
+            </form>
           </div>
-        <div class="col-2 spacer"></div>
+
       </header>
 
 

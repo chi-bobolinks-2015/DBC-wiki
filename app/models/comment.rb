@@ -5,4 +5,6 @@ class Comment < ActiveRecord::Base
   validates :content, presence: true
   validates :article_id, presence: true
   validates :commenter_id, presence: true
+
+  extend Search
 end
