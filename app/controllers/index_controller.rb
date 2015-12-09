@@ -11,7 +11,6 @@ class IndexController < ApplicationController
 
   def next
     @featured = Edit.find((params["current_id"]).to_i)
-    p "article found from params = #{@featured}"
     @details = @featured.feature_args("next")
     if request.xhr?
       render 'index/_feature', layout: false

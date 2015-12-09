@@ -22,20 +22,14 @@ class Edit < ActiveRecord::Base
   end
 
   def feature_args(direction)
-    p self
     queried_features = Edit.where(:featured => true)
-    p "queried features = #{queried_features}"
     feature_index = queried_features.rindex(self)
     if direction == "next"
       index_adjuster = 1
     else
       index_adjuster = -1
     end
-    p "index adjuster = #{index_adjuster}"
-    p "queried features = #{queried_features}"
-    p "feature index = #{feature_index}"
     new_featured = queried_features[(feature_index + index_adjuster)]
-    p "featured article = #{new_featured}"
     first = new_featured.first_feature?
     last = new_featured.last_feature?
     return { :featured => new_featured, :first => first, :last => last }
