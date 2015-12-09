@@ -1,13 +1,32 @@
-<main class="pd-bo-ft clear mn-ht clearfix">
-<div id="sidebar" class="col-3 w-mx-s d-ib bg-gray ht-au">
+<main class="pd-bo-ft mn-ht">
+  <div id="sidebar" class="col-3 w-mx-s d-ib bg-gray ht-au">
 
-...</div>
-<div class="w-100p pd-main ht-au d-ib tx-lt h-100p">
+  ...</div>
+  <div class="w-100p pd-main ht-au d-ib tx-lt h-100p">
 
-<div class="content-box clearfix">
-<span class="mg-lt-md">Featured Article:</span>
-<div id="feature-box">
-<%= render "index/feature" %>
-</div>
-</div>
+
+    <div class="content-box pd-lt-md">
+      <span class="">Featured Article:</span>
+      <div id="feature-box">
+        <%= render "index/feature" %>
+      </div>
+    </div>
+
+    </div>
+    <div class="content-box contain">
+      <h1 class="mg-lt-md">Browse by Category</h1>
+
+<ul class="pd-no ul-no">
+<% @categories.each do |category| %>
+<li class="col-3 mg-bo-xs">
+<center>
+<a href="/categories/<%= category.id %>">
+<%= category.name %>
+</a>
+</center>
+</li>
+<% end %>
+</ul>
+
+    </div>
 

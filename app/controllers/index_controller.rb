@@ -4,6 +4,7 @@ class IndexController < ApplicationController
     @featured = Edit.where(:featured => true)[0]
     @first = true
     @last = last_feature?(queried_features)
+    @categories = Category.all.limit(12)
   end
 
   def next

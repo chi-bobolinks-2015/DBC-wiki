@@ -2,8 +2,9 @@ $(function() {
 
   function reSidebar(){
     if ($(window).width() > 500) {
+      var footerHeight = $("footer").height();
       var containerHeight = $("#container").height();
-      containerHeight -= 100;
+      containerHeight -= footerHeight;
       $("#sidebar").css("min-height", containerHeight);
     } else {
       $("#sidebar").css("min-height", "4em");
