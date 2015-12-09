@@ -1,3 +1,10 @@
 <h1><%= @edit.last.title %></h1>
 
 <p><%= @edit.last.content %></p>
+
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+  <section class="content-box mg-lt-md">
+    <%= comment.content %>
+  </section>
+<% end %>

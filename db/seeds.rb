@@ -31,6 +31,7 @@ User.create(
     )
 end
 
+
 25.times do
   category = Category.create!(
     :name => Faker::Hacker.noun
@@ -58,4 +59,12 @@ end
     end
   end
   Edit.find(1).update(featured: true)
+end
+
+100.times do
+  Comment.create(
+    :content => Faker::Hipster.sentence(3, false, 3),
+    :article_id => rand(1..50),
+    :commenter_id => rand(1..50)
+    )
 end
