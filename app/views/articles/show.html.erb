@@ -1,3 +1,7 @@
-<h1><%= @edit.last.title %></h1>
+<h1><%= @article.title %></h1>
 
-<p><%= @edit.last.content %></p>
+<p><%= @article.content %></p>
+
+<%= link_to 'Delete', category_article_path,
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
