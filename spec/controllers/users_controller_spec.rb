@@ -56,17 +56,13 @@ RSpec.describe UsersController, type: :controller do
   describe "PATCH '/users/:id'" do
     let(:user) {User.create(email: "test@test.com", username: "bobolink123", password: "test")}
 
-    it "routes to users#update" do 
-      assert_routing({ method: 'put', path: "/users/#{user.id}" }, { controller: "users", action: "update", id: "#{user.id}" })
-    end
-
     describe "on valid update" do
       before :each do 
         put :update, id: user.id, user: {email: "new@newmail.com", username: "xXxBOBOLINKxXx", password: "fleetwoodmac4eva"}
         user.reload
       end
       
-      it "assigns a user instance variable" do 
+      it "properly assigns a user instance variable" do 
         expect(assigns(:user)).to eq(user)
       end 
 
@@ -89,15 +85,17 @@ RSpec.describe UsersController, type: :controller do
 
     describe "on invalid update" do
       before :each do 
-        put :update, id: user.id, user: {email: "test@test.com", username: "bobolink123", password: "fleetwoodmac4eva"}
+        put :update, id: user.id, user: {invalid_param: "foo"}
         user.reload
       end
 
       it "throws an error on duplicate email" do 
-        expect { assigns(:errors) }.to raise_error
+        expect(assigns(:errors)).to eq((assigns(:user).errors.full_messages))
       end
 
-      
+      it "rerenders login page" do
+        expect(response).to render_template("users/edit")
+      end
     end
   end
 end
