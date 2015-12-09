@@ -1,9 +1,9 @@
 $(function() {
 
 
-$("#next-feature").on("click", function(event){
-  event.preventDefault();
-  alert("boo!");
+// $("#next-feature").on("click", function(event){
+//   event.preventDefault();
+//   alert("boo!");
 
   // data = {direction: "next", article}
   // var request = $.get{
@@ -13,5 +13,5 @@ $("#next-feature").on("click", function(event){
   // request.done( function(){
   //   alert("done!");
   // })
-}
+// }
 });

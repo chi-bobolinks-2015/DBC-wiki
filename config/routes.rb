@@ -12,10 +12,22 @@ Rails.application.routes.draw do
 
   get '/edits' => 'edits#index'
   get '/index' => 'index#index'
-  # get '/index/next' => 'index#next'
+  get '/index/next' => 'index#next'
+  get '/index/prev' => 'index#prev'
+
   get '/edits/show' => 'edits#show'
   get '/articles/:id' => 'articles#show'
   get '/edits/new' => 'edits#new'
+  get '/users/:id/edit' => 'users#edit'
+  put '/users/:id' => 'users#update'
+
+  # get '/edits/new' => 'edits#new'
+
+  resources :categories do
+    resources :articles do
+      resources :edits
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

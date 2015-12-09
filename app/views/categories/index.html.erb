@@ -1,0 +1,12 @@
+<sidebar class="category_display">
+	<h1>Categories</h1>
+
+	<%= link_to 'New category', new_category_path %>
+	
+		<ul class="categories">
+  			<% @categories.each do |category| %>
+    			<li class="category"
+    			<span class="name"><a href="/categories/<%= category.id %>"><%= category.name %></a></span>
+  			<% end %>
+		</ul>
+</sidebar>
