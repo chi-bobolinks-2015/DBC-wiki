@@ -15,6 +15,13 @@
     )
 end
 
+User.create(
+  :username => "Henry",
+  :email => "sidgwick@gmail.com",
+  :admin => true,
+  :password => "1Z2X3C4V5t"
+  )
+
 45.times do
   User.create(
     :username => Faker::Name.name,
