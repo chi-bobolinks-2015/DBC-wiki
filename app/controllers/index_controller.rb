@@ -2,7 +2,7 @@ class IndexController < ApplicationController
 
   def index
     @details = {}
-    @details[:featured] = Edit.where(:featured => true).first
+    @details[:featured] = Edit.where(:featured => true)[0]
     @details[:first] = true
     @details[:last] = false
     @categories = Category.all.limit(12)
