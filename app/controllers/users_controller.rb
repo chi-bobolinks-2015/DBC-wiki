@@ -18,9 +18,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: current_user.id)
+    @articles = Article.all
     if is_admin?
       @users = User.all
-      @articles = Article.all
       render '/admin/show'
     else
       render "/users/show"
@@ -43,8 +43,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete
-    
+  def destroy
+    @user = User.find(params[:id]).destroy
+    redirect_to '/'
   end
 
 	private
