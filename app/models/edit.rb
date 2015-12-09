@@ -33,13 +33,6 @@ class Edit < ActiveRecord::Base
     return { :featured => featured, :first => first, :last => last }
   end
 
-
-  # def create_with_edit
-  # 	@category = Category.find_or_create_by(:name => name)
-  # 	@article = Article.create(:category_id => @category.id, :user_id => current_user.id, :current_edit_id => current_edit_id)
-  # 	@edit = Edit.create(:article_id => @article.id, :author_id => current_user.id, :approved => false, :content => content, :title => title, :approver_id => nil, :featured => false )
-  # end
-
   def self.unapproved_edits
     where("approved = false")
   end

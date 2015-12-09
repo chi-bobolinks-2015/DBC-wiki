@@ -1,0 +1,15 @@
+<h1>Articles for <%= @category.name.capitalize %></h1>
+
+<ul class="articles">
+  	<% @articles.each do |article| %>
+    	<li class="article">
+    		<span class="title"><a href="/categories/<%= @category.id %>/articles/<%= article.id %>"><%= article.edits.last.title %></a></span>
+    	</li>
+  	<% end %>
+</ul>
+
+<%= link_to 'New article', new_category_article_path(@category) %>
+<%= link_to 'Edit category', edit_category_path %>
+<%= link_to 'Delete', category_path(@category),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
