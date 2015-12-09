@@ -53,4 +53,56 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "PATCH '/users/:id'" do
+    let(:user) {User.create(email: "test@test.com", username: "bobolink123", password: "test")}
+
+    describe "on valid update" do
+      before :each do 
+        put :update, id: user.id, user: {email: "new@newmail.com", username: "xXxBOBOLINKxXx", password: "fleetwoodmac4eva"}
+        user.reload
+      end
+      
+      it "properly assigns a user instance variable" do 
+        expect(assigns(:user)).to eq(user)
+      end 
+
+      it "updates email" do 
+        expect(user.email).to eq("new@newmail.com")
+      end
+      
+      it "updates username" do 
+        expect(user.username).to eq("xXxBOBOLINKxXx")
+      end
+      
+      it "updates password" do 
+        expect(user.authenticate("fleetwoodmac4eva")).to eq(user)
+      end
+      
+      it "redirects user to the root_url" do
+        expect(response).to redirect_to(root_url)
+      end 
+    end
+
+    describe "on invalid update" do
+      before :each do 
+        put :update, id: user.id, user: {invalid_param: "foo"}
+        user.reload
+      end
+
+      it "throws an error on duplicate email" do 
+        expect(assigns(:errors)).to eq((assigns(:user).errors.full_messages))
+      end
+
+      it "rerenders login page" do
+        expect(response).to render_template("users/edit")
+      end
+    end
+  end
 end
+
+
+
+
+
+
+
