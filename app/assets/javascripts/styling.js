@@ -11,6 +11,17 @@ $(function() {
     }
   }
 
+  function markdownGo(){
+    if ($("#markdown-content").length === 0 ) {
+      return
+    } else {
+    var markdownContent = $("#markdown-content").html();
+    markedHtml = markdown.toHTML( markdownContent );
+    $("#markdown-content").html( markedHtml );
+    }
+  };
+
+  markdownGo();
   reSidebar();
 
   $("#feature-box").on("click", "#next-feature", function(event){
@@ -28,7 +39,7 @@ $(function() {
     });
   });
 
-    $("#feature-box").on("click", "#prev-feature", function(event){
+  $("#feature-box").on("click", "#prev-feature", function(event){
     event.preventDefault();
     var grabbedId = $(".feature-id-grabber").attr("id");
 
@@ -43,9 +54,10 @@ $(function() {
     });
   });
 
-  var markdownContent = $("#markdown-content").html();
-  markedHtml = markdown.toHTML( markdownContent );
-  console.log(markedHtml);
-  $("#markdown-content").html( markedHtml );
+  $(window).on("resize", function(event){
+    reSidebar();
+  });
+
+
 
 });

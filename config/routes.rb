@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   delete '/edit' => 'edits#destroy', as: "delete_edit"
 
   get '/articles/:id' => 'articles#show'
+  get '/edits/new' => 'edits#new'
+  get '/users/:id/edit' => 'users#edit'
+  put '/users/:id' => 'users#update'
+  delete '/users/:id' => 'users#destroy', as: 'destroy_user'
   # get '/edits/new' => 'edits#new'
 
   resources :categories do
