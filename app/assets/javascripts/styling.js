@@ -12,9 +12,11 @@ $(function() {
   }
 
   function markdownGo(){
-    if ($("#markdownContent") === undefined ) {
+    if ($("#markdownContent").length === 0 ) {
+      console.log("in the if")
       return
     } else {
+      console.log("in the else")
     var markdownContent = $("#markdown-content").html();
     markedHtml = markdown.toHTML( markdownContent );
     $("#markdown-content").html( markedHtml );
