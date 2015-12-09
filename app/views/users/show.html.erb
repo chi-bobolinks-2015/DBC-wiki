@@ -26,10 +26,12 @@
 
 <section class="content-box mg-lt-md">
   <h2>Your Articles</h2>
-  <% @articles.where(user_id: current_user.id).each do |article| %>
+  <% @articles.each do |article| %>
+    <% if article.user_id == current_user.id %>
     <ul class=".ul-no">
-    <p>Link to current edit of article here, this is the current_edit_id --> <%= article.current_edit_id %></p>
+      <a href="/catagories/<%=article.category_id%>/articles/<%=article.id%>"><%=article.edits.last.title%></a>
     </ul>
+    <% end %>
   <% end %>
 </section>
 <!--
