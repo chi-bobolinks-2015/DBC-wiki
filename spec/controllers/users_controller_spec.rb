@@ -54,17 +54,22 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "PATCH '/users/:id'" do
+    let(:user) {User.create(email: "test@test.com", username: "bobolink123", password: "test")}
 
     it "routes to users#update" do 
-      assert_routing({ method: 'patch', path: '/users' }, { controller: "users", action: "update" })
+      assert_routing({ method: 'put', path: "/users/#{user.id}" }, { controller: "users", action: "update", id: "#{user.id}" })
     end
 
     describe "on valid update" do
-        let(:user) {User.create(email: "test@test.com", username: "bobolink123", password: "test")}
       before :each do 
-        post :update, {id: user.id, user: {email: "new@newmail.com", username: "xXxBOBOLINKxXx", password: "fleetwoodmac4eva"}}
+        put :update, id: user.id, user: {email: "new@newmail.com", username: "xXxBOBOLINKxXx", password: "fleetwoodmac4eva"}
+        user.reload
       end
       
+      it "assigns a user instance variable" do 
+        expect(assigns(:user)).to eq(user)
+      end 
+
       it "updates email" do 
         expect(user.email).to eq("new@newmail.com")
       end
@@ -74,14 +79,32 @@ RSpec.describe UsersController, type: :controller do
       end
       
       it "updates password" do 
-        expect(user.authenticate("fleetwoodmac4eva")).to eq(true)
+        expect(user.authenticate("fleetwoodmac4eva")).to eq(user)
       end
       
       it "redirects user to the root_url" do
         expect(response).to redirect_to(root_url)
       end 
     end
+
+    describe "on invalid update" do
+      before :each do 
+        put :update, id: user.id, user: {email: "test@test.com", username: "bobolink123", password: "fleetwoodmac4eva"}
+        user.reload
+      end
+
+      it "throws an error on duplicate email" do 
+        expect { assigns(:errors) }.to raise_error
+      end
+
+      
+    end
   end
-
-
 end
+
+
+
+
+
+
+
