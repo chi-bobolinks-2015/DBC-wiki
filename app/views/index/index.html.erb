@@ -1,7 +1,7 @@
 <main class="pd-bo-ft mn-ht">
   <div id="sidebar" class="col-3 w-mx-s d-ib bg-gray ht-au">
-
-  ...</div>
+    ...
+  </div>
   <div class="w-100p pd-main ht-au d-ib tx-lt h-100p">
 
 
@@ -12,21 +12,23 @@
       </div>
     </div>
 
-    </div>
-    <div class="content-box contain">
-      <h1 class="mg-lt-md">Browse by Category</h1>
+  </div>
+  <div class="content-box contain">
+    <h1 class="mg-lt-md">Browse by Category</h1>
 
-<ul class="pd-no ul-no">
-<% @categories.each do |category| %>
-<li class="col-3 mg-bo-xs">
-<center>
-<a href="/categories/<%= category.id %>">
-<%= category.name %>
-</a>
-</center>
-</li>
-<% end %>
-</ul>
-
-    </div>
+    <ul class="pd-no ul-no">
+      <% @categories.each do |category| %>
+      <li class="col-3 mg-bo-xs">
+        <center>
+          <a href="/categories/<%= category.id %>">
+            <%= category.name %>
+          </a>
+        </center>
+      </li>
+      <% end %>
+    </ul>
+    <center>
+      <span class="mg-tp-sm"><a href="/categories">See all categories...</a></span>
+    </center>
+  </div>
 

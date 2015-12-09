@@ -13,9 +13,10 @@ $(function() {
 
   reSidebar();
 
-  $("#next-feature").on("click", function(event){
+  $("#feature-box").on("click", "#next-feature", function(event){
     event.preventDefault();
     var grabbedId = $(".feature-id-grabber").attr("id");
+        console.log(grabbedId)
     var data = {current_id: grabbedId};
     var request = $.get(
       url = "/index/next",
@@ -25,7 +26,21 @@ $(function() {
       $("#feature-box").html(htmlResponse);
       reSidebar();
     });
+  });
 
+    $("#feature-box").on("click", "#prev-feature", function(event){
+    event.preventDefault();
+    var grabbedId = $(".feature-id-grabber").attr("id");
+
+    var data = {current_id: grabbedId};
+    var request = $.get(
+      url = "/index/prev",
+      data = data
+    );
+    request.done( function(htmlResponse){
+      $("#feature-box").html(htmlResponse);
+      reSidebar();
+    });
   });
 
 });
