@@ -30,8 +30,4 @@ class EditsController < ApplicationController
 # 	def edit_params
 # 		params.require(:edit).permit(:article_id, :author_id, :approved, :content, :title, :approver_id)
 # 	end
-
-# 	def category_params
-# 		params.require(:category).permit(:name)
-# 	end
 end

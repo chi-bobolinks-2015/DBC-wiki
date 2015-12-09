@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get '/edits/show' => 'edits#show'
   get '/articles/:id' => 'articles#show'
-  get '/edits/new' => 'edits#new'
+  # get '/edits/new' => 'edits#new'
   
   resources :categories do
     resources :articles do
