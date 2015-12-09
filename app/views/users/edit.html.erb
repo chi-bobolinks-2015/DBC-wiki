@@ -17,5 +17,6 @@
   <%= f.submit "Submit" %>
 <% end %>
 </p>
+<%= button_to("Delete Account", destroy_user_path(@user), :method => :delete) %>
 </section>
 </center>
