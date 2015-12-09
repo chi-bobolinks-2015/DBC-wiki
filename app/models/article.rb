@@ -7,6 +7,8 @@ class Article < ActiveRecord::Base
   validates :category_id, presence: true
   validates :user_id, presence: true
 
+  extend Search
+  # validates :current_edit_id, presence: true
   def self.with_unapproved_edits
     # join the article with all its edits
     joins(:edits).where("edits.approved = ?", false).group(:id).having("count(*) > 0")
@@ -17,7 +19,7 @@ class Article < ActiveRecord::Base
 
   def self.create_with_edit(category_id, user_id, title, content)
     article = Article.create!(:category_id => category_id, :user_id => user_id)
-    edit = article.edits.create!(:author_id => user_id, :title => title, :content => content, :approved => false, :featured => false)  
+    edit = article.edits.create!(:author_id => user_id, :title => title, :content => content, :approved => false, :featured => false)
 
     return article
   end
@@ -32,6 +34,16 @@ class Article < ActiveRecord::Base
 
   def has_approved_edits?
     self.aprroved_edits.empty?
+=======
+  def self.forward_facing_edits
+    return_array = []
+    articles = Article.all
+    articles.each do |article|
+      approved = article.edits.where(:approved => true)
+      return_array.push(approved.last)
+    end
+    return return_array
+>>>>>>> search function, very slow
   end
 
 end

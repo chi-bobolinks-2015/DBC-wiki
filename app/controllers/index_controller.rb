@@ -1,7 +1,13 @@
 class IndexController < ApplicationController
 
   def search
-
+    @term = params["search"]
+    @user_username_match = User.search("username", @term)
+    @category_name_match = Category.search("name", @term)
+    @forward_facing = Article.forward_facing_edits
+    @article_title_match = @forward_facing.select{ |edit| /#{@term}/.match(edit.title) }
+    @article_content_match = @forward_facing.select{ |edit| /#{@term}/.match(edit.title) }
+    render 'search_results'
   end
 
   def landing

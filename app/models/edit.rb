@@ -10,6 +10,8 @@ class Edit < ActiveRecord::Base
   validates :title, presence: true
   validates :featured, inclusion: { in: [true, false] }
 
+  extend Search
+
   def first_feature?
     self == Edit.where(:featured => true)[0]
   end
