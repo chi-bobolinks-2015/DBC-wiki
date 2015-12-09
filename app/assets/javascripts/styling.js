@@ -43,4 +43,9 @@ $(function() {
     });
   });
 
+  var markdownContent = $("#markdown-content").html();
+  markedHtml = markdown.toHTML( markdownContent );
+  console.log(markedHtml);
+  $("#markdown-content").html( markedHtml );
+
 });
