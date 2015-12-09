@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
 	def show
 		@category = Category.find(params[:id])
 		@articles = @category.articles
-		# .where(article_id: article.id, approved: true)
 	end
 
 	def new
