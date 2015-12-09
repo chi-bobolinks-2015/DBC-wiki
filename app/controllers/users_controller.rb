@@ -30,17 +30,25 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by(id: params[:id])
-    render 'users/edit'
+    if @user == current_user
+      render 'users/edit'
+    else 
+      redirect_to '/login'
+    end
   end
 
   def update
     @user = User.find_by(id: params[:id])
-    if @user.update_attributes(username: user_params[:username], email: user_params[:email], password: user_params[:password])
-      # flash[:success] = "Profile updated"
-      redirect_to "/"
-    else
-      @errors = @user.errors.full_messages
-      render 'users/edit'
+    if @user == current_user
+      if @user.update_attributes(username: user_params[:username], email: user_params[:email], password: user_params[:password])
+        # flash[:success] = "Profile updated"
+        redirect_to "/"
+      else
+        @errors = @user.errors.full_messages
+        render 'users/edit'
+      end
+    else 
+      redirect_to login_path 
     end
   end
 

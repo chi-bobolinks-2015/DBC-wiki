@@ -17,11 +17,10 @@ ActiveRecord::Schema.define(version: 20151208205431) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.integer  "category_id",     null: false
-    t.integer  "user_id",         null: false
-    t.integer  "current_edit_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "category_id", null: false
+    t.integer  "user_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -39,15 +38,15 @@ ActiveRecord::Schema.define(version: 20151208205431) do
   end
 
   create_table "edits", force: :cascade do |t|
-    t.integer  "article_id",  null: false
-    t.integer  "author_id",   null: false
-    t.boolean  "approved"
-    t.string   "content",     null: false
-    t.string   "title",       null: false
+    t.integer  "article_id",                  null: false
+    t.integer  "author_id",                   null: false
+    t.boolean  "approved",    default: false
+    t.string   "content",                     null: false
+    t.string   "title",                       null: false
     t.integer  "approver_id"
-    t.boolean  "featured"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "featured",    default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "users", force: :cascade do |t|
