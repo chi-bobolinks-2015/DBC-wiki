@@ -39,6 +39,15 @@ a {
 
 }
 
+.input-field {
+  border-width: 2;
+  border-radius: 5px;
+  width: 40%;
+  margin-bottom: 10px;
+}
+
+
+
 a:hover{
   text-shadow:0 0 1px #19abb5, 0 0 1px #19abb5
 }

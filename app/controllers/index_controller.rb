@@ -1,5 +1,13 @@
 class IndexController < ApplicationController
 
+  def landing
+    if logged_in?
+      redirect_to controller: "index", action: "index"
+    else
+      redirect_to controller: "sessions", action: "new"
+    end
+  end
+
   def index
     @details = {}
     @details[:featured] = Edit.where(:featured => true)[0]
