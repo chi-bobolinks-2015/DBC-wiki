@@ -20,21 +20,40 @@
 <section class="content-box mg-lt-md">
   <h1>Hello, <%= @user.username %></h1>
 
+  <h2>Users Dropdown</h2>
+
+  <%= form_tag(make_admin_path, method:"put") do %>
+    <%= select_tag(:user_id, options_from_collection_for_select(@users.order_by_username, :id, :username)) %>
+    <br>
+    <br>
+    <%= submit_tag "Make Admin",  data: { confirm: "Are you sure?" } %>
+  <% end %>
+  <br>
+  <br>
   <h2>Edit Queue</h2>
   <% @articles.with_unapproved_edits.each do |article| %>
     <ul class="ul-no">
       <% article.edits.unapproved_edits.each do |edit| %>
         <li>Proposed Title: <%= edit.title %></li>
-        <li>Proposed Content: <%= edit.content %></li>
+        <li>Proposed Content: <%= edit.content %></li><br>
+        <li>Updated On: <%= edit.updated_at %></li><br>
+
+        <%= form_for edit, url: edit do |f| %>
+          <input type="hidden" name="edit_id" value=<%= edit.id %>>
+          <%= f.submit "Approve Edit" %>
+        <% end %>
+
+        <br>
+        <%= form_for edit, url: delete_edit_path, method: :delete do |f| %>
+          <input type="hidden" name="edit_id" value=<%= edit.id %>>
+          <%= f.submit "Delete Edit" %>
+        <% end %>
+        <br>
+        <br>
       <% end %>
     </ul>
   <% end %>
-
-
-
 </section>
-
-
 <!--
   this is where the content goes.
 

@@ -6,9 +6,8 @@ class Edit < ActiveRecord::Base
   validates :article_id, presence: true
   validates :author_id, presence: true
   validates :approved, inclusion: { in: [true, false] }
-  validates :content, presence: true, length: { minimum: 5 }
+  validates :content, presence: true
   validates :title, presence: true
-  # validates :approver_id, presence: true
   validates :featured, inclusion: { in: [true, false] }
 
   def first_feature?

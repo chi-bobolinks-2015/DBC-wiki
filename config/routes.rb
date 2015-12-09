@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get '/index/prev' => 'index#prev'
 
   get '/edits/show' => 'edits#show'
+  patch '/edit' => 'edits#update'
+  delete '/edit' => 'edits#destroy', as: "delete_edit"
+
   get '/articles/:id' => 'articles#show'
   get '/edits/new' => 'edits#new'
   get '/users/:id/edit' => 'users#edit'
@@ -30,6 +33,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :edits do
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -7,11 +7,21 @@ class User < ActiveRecord::Base
   validates :username,:email, presence: true
   validates :email, uniqueness: true, format: { with: /\A.+@.+\..+\z/ }
 
-  validates :password, length: { minimum: 1 }
-  validates_presence_of :password, :on => :create
+  # validates :password, length: { minimum: 1 }
+  # validates_presence_of :password, :on => :create
   has_secure_password
 
   def self.order_by_username
     order('username ASC')
   end
+
+  # def find_my_articles
+  #   @articles = Article.all
+  #   @articles.map do |article|
+  #     if article.user_id == current_user.id
+  #       return article
+  #     end
+  #   end
+  # end
+
 end
