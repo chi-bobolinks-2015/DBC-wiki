@@ -34,6 +34,7 @@ class Article < ActiveRecord::Base
 
   def has_approved_edits?
     self.aprroved_edits.empty?
+  end
 
   def self.forward_facing_edits
     return_array = []
