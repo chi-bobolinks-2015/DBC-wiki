@@ -61,10 +61,10 @@ end
   Edit.find(1).update(featured: true)
 end
 
-100.times do
+800.times do
   Comment.create(
     :content => Faker::Hipster.sentence(3, false, 3),
-    :article_id => rand(1..50),
+    :article_id => rand(1..800),
     :commenter_id => rand(1..50)
     )
 end
