@@ -1,5 +1,9 @@
 class IndexController < ApplicationController
 
+  def search
+
+  end
+
   def landing
     if logged_in?
       redirect_to controller: "index", action: "index"

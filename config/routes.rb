@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root :to => 'index#landing'
 
+  get '/search' => 'index#search'
   post '/users' => 'users#create'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
