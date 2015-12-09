@@ -1,4 +1,5 @@
 class IndexController < ApplicationController
+
   def index
     @details = {}
     @details[:featured] = Edit.where(:featured => true).first
