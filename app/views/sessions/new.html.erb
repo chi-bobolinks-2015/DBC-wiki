@@ -5,7 +5,7 @@
 <!-- don't touch the code above here! -->
 
 
-
+<a href="/signup">Register a new account</a>
 
 <!--
    this is where the sidebar info goes
@@ -18,8 +18,9 @@
 </div>
 <div class="w-100p pd-main ht-au d-ib tx-lt h-100p">
 <!-- don't touch the code between these comments -->
+<center>
+<section class="login-box mg-lt-md">
 
-<section class="content-box mg-lt-md">
 <h1>Login for DBC Wiki!</h1>
 
 <%if @errors%>
@@ -28,11 +29,12 @@
 
 <%= form_for :session, url: '/sessions' do |f| %>
 
-  <%= f.text_field :email, :placeholder => " email", :class => "input-field" %><br>
-  <%= f.password_field :password, :placeholder => " password", :class => "input-field clearfix" %><br>
-  <%= f.submit "Submit", :class => "submit-button" %>
+  <%= f.text_field :email, :placeholder => " email" %><br>
+  <%= f.password_field :password, :placeholder => " password" %><br>
+  <%= f.submit "Submit" %>
 
 <% end %>
+</center>
 </section>
 
 
