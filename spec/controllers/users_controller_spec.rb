@@ -98,6 +98,28 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+
+  describe "DESTROY '/users/:id'" do
+    let(:user) {User.create(email: "test@test.com", username: "bobolink123", password: "test")}
+
+    before :each do 
+      delete :destroy, id: user.id
+    end
+
+    it "properly assigns a user instance variable" do
+      expect(assigns(:user)).to eq(user)
+    end
+
+    it "deletes the user from the database" do 
+      expect(User.all.count).to eq(0)
+    end
+
+    it "redirects to root" do
+      expect(response).to redirect_to(root_url)
+    end
+
+  end
+
 end
 
 
