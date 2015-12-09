@@ -2,7 +2,7 @@ $(function() {
 
   function reSidebar(){
     if ($(window).width() > 500) {
-      var footerHeight = $("footer").height();
+      var footerHeight = $("footer").height() + 1;
       var containerHeight = $("#container").height();
       containerHeight -= footerHeight;
       $("#sidebar").css("min-height", containerHeight);
@@ -42,5 +42,10 @@ $(function() {
       reSidebar();
     });
   });
+
+  var markdownContent = $("#markdown-content").html();
+  markedHtml = markdown.toHTML( markdownContent );
+  console.log(markedHtml);
+  $("#markdown-content").html( markedHtml );
 
 });
