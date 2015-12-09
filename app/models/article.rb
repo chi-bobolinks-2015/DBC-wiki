@@ -34,7 +34,7 @@ class Article < ActiveRecord::Base
 
   def has_approved_edits?
     self.aprroved_edits.empty?
-=======
+
   def self.forward_facing_edits
     return_array = []
     articles = Article.all
@@ -43,7 +43,7 @@ class Article < ActiveRecord::Base
       return_array.push(approved.last)
     end
     return return_array
->>>>>>> search function, very slow
+      search function, very slow
   end
 
 end
