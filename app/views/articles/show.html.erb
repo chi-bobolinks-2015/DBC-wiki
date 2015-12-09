@@ -1,7 +1,17 @@
 <h1><%= @article.title %></h1>
 
+
 <p><%= @article.content %></p>
 
-<%= link_to 'Delete', category_article_path,
+
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+  <section class="content-box mg-lt-md">
+    <%= comment.content %>
+  </section>
+<% end %>
+
+
+<%= link_to 'Delete', category_article_path(@category, @article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>

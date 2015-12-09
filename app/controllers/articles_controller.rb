@@ -10,7 +10,8 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
-		# @edit = Edit.where(article_id: article.id, approved: true)
+		@category = Category.find(@article.category_id)
+		@comments = Comment.where(article_id: params[:id])
     	render 'show'
 	end
 
