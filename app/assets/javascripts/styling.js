@@ -43,4 +43,9 @@ $(function() {
     });
   });
 
+    $(window).on("resize", function(event){
+      reSidebar();
+    });
+
+
 });
