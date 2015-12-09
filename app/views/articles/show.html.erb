@@ -1,6 +1,8 @@
-<h1><%= @edit.last.title %></h1>
+<h1><%= @article.title %></h1>
 
-<p><%= @edit.last.content %></p>
+
+<p><%= @article.content %></p>
+
 
 <h3>Comments</h3>
 <% @comments.each do |comment| %>
@@ -8,3 +10,8 @@
     <%= comment.content %>
   </section>
 <% end %>
+
+
+<%= link_to 'Delete', category_article_path(@category, @article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
