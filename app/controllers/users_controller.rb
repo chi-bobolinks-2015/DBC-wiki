@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def delete
-    #code
+    
   end
 
 	private

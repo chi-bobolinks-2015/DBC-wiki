@@ -29,7 +29,7 @@ RSpec.describe UsersController, type: :controller do
 
     it "renders users/new after unsuccessful user creation" do
         post :create, {user: {username: "test", email: "bademail",password: "password"}}
-      expect(:create).to render_template("user/new")
+      expect(:create).to render_template("users/new")
     end
   end
 
