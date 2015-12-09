@@ -28,13 +28,13 @@
       <li>Proposed Content: <%= edit.content %></li><br>
       <li>Updated On: <%= edit.updated_at %></li><br>
 
-      <%= form_for edit, url: 'edit#update' do |f| %>
+      <%= form_for edit, url: edit do |f| %>
         <input type="hidden" name="edit_id" value=<%= edit.id %>>
         <%= f.submit "Approve Edit" %>
       <% end %>
 
       <br>
-      <%= form_for edit, url: 'edit#destroy', action: :delete do |f| %>
+      <%= form_for edit, url: delete_edit_path, method: :delete do |f| %>
         <input type="hidden" name="edit_id" value=<%= edit.id %>>
         <%= f.submit "Delete Edit" %>
       <% end %>
