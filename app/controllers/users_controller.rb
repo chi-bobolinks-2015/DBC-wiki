@@ -2,7 +2,7 @@ class UsersController < ApplicationController
  include ApplicationHelper
   def new
 
-    render 'user/new'
+    render 'users/new'
   end
 
   def create
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to '/'
     else
       @errors = @user.errors.full_messages
-      render 'user/new'
+      render 'users/new'
     end
   end
 
@@ -21,8 +21,28 @@ class UsersController < ApplicationController
     if is_admin?
       render '/admin/show'
     else
-      render "/user/show"
+      render "/users/show"
     end
+  end
+
+  def edit
+    @user = User.find_by(id: params[:id])
+    render 'users/edit'
+  end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    if @user.update_attributes(user_params[:username], user_params[:email], user_params[:password])
+      # flash[:success] = "Profile updated"
+      redirect_to "/"
+    else
+      @errors = @user.errors.full_messages
+      render 'users/edit'
+    end
+  end
+
+  def delete
+    #code
   end
 
 	private
