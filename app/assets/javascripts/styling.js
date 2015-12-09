@@ -43,6 +43,10 @@ $(function() {
     });
   });
 
+    $(window).on("resize", function(event){
+      reSidebar();
+    });
+
   var markdownContent = $("#markdown-content").html();
   markedHtml = markdown.toHTML( markdownContent );
   console.log(markedHtml);
