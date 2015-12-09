@@ -17,25 +17,22 @@
 <div class="w-100p pd-main ht-au d-ib tx-lt h-100p">
 <!-- don't touch the code between these comments -->
 
+<section class="content-box mg-lt-md">
+  <h1>Hello, <%= @user.username %></h1>
 
-<h1>Hello, <%= @user.username %></h1>
+  <h2>Edit Queue</h2>
+  <% @articles.with_unapproved_edits.each do |article| %>
+    <ul class="ul-no">
+      <% article.edits.unapproved_edits.each do |edit| %>
+        <li>Proposed Title: <%= edit.title %></li>
+        <li>Proposed Content: <%= edit.content %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<h2>Edit Queue</h2>
-<% @articles.with_unapproved_edits.each do |article| %>
-  <ul class=".ul-no">
-    <% article.edits.unapproved_edits.each do |edit| %>
-      <li>Proposed Title: <%= edit.title %></li>
-      <li>Proposed Content: <%= edit.content %></li>
-    <% end %>
-  </ul>
-<% end %>
 
-<h2>Users Dropdown</h2>
-<%=
-<% @users.each do |user| %>
-  <p><%= user.username %></p>
-  <p><%= user.username %></p>
-<% end %>
+
+</section>
 
 
 <!--

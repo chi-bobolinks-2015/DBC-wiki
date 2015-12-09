@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 1 }
   validates_presence_of :password, :on => :create
   has_secure_password
+
+  def self.order_by_username
+    order('username ASC')
+  end
 end
