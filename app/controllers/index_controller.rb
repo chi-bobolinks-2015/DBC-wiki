@@ -2,7 +2,7 @@ class IndexController < ApplicationController
 
   def index
     @details = {}
-    @details[:featured] = Edit.where(:featured => true).first
+    @details[:featured] = Edit.where(:featured => true)[0]
     @details[:first] = true
     @details[:last] = false
     @categories = Category.all.limit(12)
@@ -11,6 +11,7 @@ class IndexController < ApplicationController
 
   def next
     @featured = Edit.find((params["current_id"]).to_i)
+    p "article found from params = #{@featured}"
     @details = @featured.feature_args("next")
     if request.xhr?
       render 'index/_feature', layout: false
