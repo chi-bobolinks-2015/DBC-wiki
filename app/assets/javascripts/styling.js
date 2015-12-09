@@ -5,12 +5,14 @@ $(function() {
       $("#sidebar").css("height", 0);
       var footerHeight = $("footer").height();
       var containerHeight = $("#container").height();
-      containerHeight = containerHeight - footerHeight;
+      var totalHeight = containerHeight - (footerHeight*2);
       $("#sidebar").css({
-        "height": containerHeight + "px"
+        "height": totalHeight + "px"
       });
     } else {
-      $("#sidebar").css("min-height", "4em");
+      $("#sidebar").css({
+        "height": "4em"
+      });
     }
   }
 
