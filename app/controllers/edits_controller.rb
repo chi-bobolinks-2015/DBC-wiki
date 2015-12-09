@@ -10,18 +10,30 @@ class EditsController < ApplicationController
 		render 'new'
 	end
 
+	def update
+		@edit = Edit.find_by(id: params[:edit_id])
+		@edit.update(approved: true, approver_id: current_user.id)
+		redirect_to '/profile'
+	end
+
+	def destroy
+		@edit = Edit.find_by(id: params[:edit_id])
+		@edit.destroy
+		redirect_to '/profile'
+	end
+
 	# def create
 	# 	@category = Category.find_or_create_by(:name => name)
 	# 	@article = Article.create(:category_id => @category.id, :user_id => current_user.id, :current_edit_id => current_edit_id)
 	# 	@edit = Edit.create(:article_id => @article.id, :author_id => current_user.id, :approved => false, :content => content, :title => title, :approver_id => nil, :featured => false )
-  		
+
  #  		if @edit.valid?
  #  			redirect_to @edit
  #  		else
  #    		render 'new'
  #    	end
 	# end
-	
+
 # private
 # 	def article_params
 # 		params.require(:article).permit(:category_id, :user_id)

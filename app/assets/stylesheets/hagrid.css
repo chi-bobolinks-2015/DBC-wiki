@@ -4,6 +4,7 @@
 /* Mobile first! */
 [class*="col-"] { width: 100%; }
 [class*="col-"] { float: left; }
+.login-box { width: 100%; }
 
 .row:after {
     content: "";
@@ -14,6 +15,7 @@
 
 /* Desktop, 12 cell grid */
 @media only screen and (min-width: 500px) {
+
     .spacer { min-height: 1px; }
     .col-1  {width: 8.33%;}
     .col-2  {width: 16.66%;}

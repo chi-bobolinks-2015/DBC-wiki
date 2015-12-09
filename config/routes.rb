@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root :to => 'users#new'
+  root :to => 'index#landing'
+
   post '/users' => 'users#create'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
@@ -16,6 +17,9 @@ Rails.application.routes.draw do
   get '/index/prev' => 'index#prev'
 
   get '/edits/show' => 'edits#show'
+  patch '/edit' => 'edits#update'
+  delete '/edit' => 'edits#destroy', as: "delete_edit"
+
   get '/articles/:id' => 'articles#show'
   get '/edits/new' => 'edits#new'
   get '/users/:id/edit' => 'users#edit'

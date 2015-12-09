@@ -11,10 +11,10 @@
 <p>
 <%= form_for :user, url: "/users/#{current_user.id}", method: 'patch' do |f| %>
   <%= form_tag(method: :patch) %>
-  
-  <%= f.text_field :username, :placeholder => " username" %><br>
-  <%= f.text_field :email, :placeholder => " email" %> <br>
-  <%= f.password_field :password, :placeholder => " password" %> <br>
+
+  <%= f.text_field :username, :placeholder => " username", :class => "input-field" %><br>
+  <%= f.text_field :email, :placeholder => " email", :class => "input-field" %> <br>
+  <%= f.password_field :password, :placeholder => " password", :class => "input-field" %> <br>
   <%= f.submit "Submit" %>
 <% end %>
 </p>
