@@ -10,4 +10,14 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 1 }
   validates_presence_of :password, :on => :create
   has_secure_password
+
+  # def find_my_articles
+  #   @articles = Article.all
+  #   @articles.map do |article|
+  #     if article.user_id == current_user.id
+  #       return article
+  #     end
+  #   end
+  # end
+
 end

@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: current_user.id)
     @articles = Article.all
+    @edits = Edit.all
     if is_admin?
       @users = User.all
       render '/admin/show'
