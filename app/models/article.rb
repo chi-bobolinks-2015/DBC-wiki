@@ -43,7 +43,6 @@ class Article < ActiveRecord::Base
       return_array.push(approved.last)
     end
     return return_array
-      search function, very slow
   end
 
 end
