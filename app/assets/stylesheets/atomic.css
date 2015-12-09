@@ -42,11 +42,9 @@ a {
 .input-field {
   border-width: 2;
   border-radius: 5px;
-  width: 40%;
-  margin-bottom: 10px;
+  min-width: 40%;
+  margin: 10px 5% 0 0;
 }
-
-
 
 a:hover{
   text-shadow:0 0 1px #19abb5, 0 0 1px #19abb5
@@ -137,7 +135,7 @@ h3 {
 .mg-tp-xs     { margin-top:   .3em; }
 .mg-bo-xs     { margin-bottom:.3em; }
 .mg-tp-sm     { margin-top:   .7em; }
-.mg-lt-md     { margin-left:   1em; }
+/*.mg-lt-md     { margin-left:   1em; }*/
 .mg-rt-md     { margin-right:  1em; }
 .mg-lt-mp     { margin-left:   15%; }
 .mg-lt-no     { margin-left:     0;}

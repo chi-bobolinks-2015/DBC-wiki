@@ -2,10 +2,13 @@ $(function() {
 
   function reSidebar(){
     if ($(window).width() > 500) {
-      var footerHeight = $("footer").height() + 1;
+      $("#sidebar").css("height", 0);
+      var footerHeight = $("footer").height();
       var containerHeight = $("#container").height();
-      containerHeight -= footerHeight;
-      $("#sidebar").css("min-height", containerHeight);
+      containerHeight = containerHeight - footerHeight;
+      $("#sidebar").css({
+        "height": containerHeight + "px"
+      });
     } else {
       $("#sidebar").css("min-height", "4em");
     }
